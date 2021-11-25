@@ -28,7 +28,7 @@ public class UserDaoHibernateImpl implements UserDao {
                     "(ID BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT ," +
                     "NAME  VARCHAR(25)," +
                     "LAST_NAME VARCHAR(25)," +
-                    "AGE TINYINT, PRIMARY KEY (id))").executeUpdate();
+                    "AGE TINYINT)").executeUpdate();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {
@@ -47,7 +47,7 @@ public class UserDaoHibernateImpl implements UserDao {
 
         try {
             transaction = session.beginTransaction();
-            session.createSQLQuery("DROP TABLE IF EXISTS users");
+            session.createSQLQuery("DROP TABLE IF EXISTS users").executeUpdate();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) {

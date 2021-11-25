@@ -16,7 +16,7 @@ public class Util {
 
     private static final String USER_NAME = "root";
     private static final String PASSWORD = "Soulja4477qwe";
-    private static final String CONNECTION_URL = "jdbc:mysql://localhost:3306/javastudy";
+    private static final String CONNECTION_URL = "jdbc:mysql://localhost:3306/new_schema2";
 
     private static SessionFactory sessionFactory;
 
@@ -34,6 +34,7 @@ public class Util {
                 properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 properties.put(Environment.HBM2DDL_AUTO, "create-drop");
                 properties.put(Environment.AUTOCOMMIT, "true");
+
 
                 configuration.setProperties(properties);
                 configuration.addAnnotatedClass(User.class);
